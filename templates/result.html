@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>News Classification</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='internet.png') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">News Classification</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction== "sport" %}
+				<h1>Prediction: <span class='sport'>The news is about sports</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='sports.jpg') }}" alt="Sports Image">
+			{% elif prediction== "business" %}
+				<h1>Prediction: <span class='business'>The news is about business.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='business.jfif') }}" alt="Business Image">
+			{% elif prediction== "politics" %}
+				<h1>Prediction: <span class='politics '>The news is about politics .</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='Political.jpg') }}" alt="Plotical Image">
+			{% elif prediction== "tech" %}
+				<h1>Prediction: <span class='tech'>The news is about tech.</span></h1>	
+				<img class="gif1" src="{{ url_for('static', filename='tech.jpg') }}" alt="Tech Image">
+			{% elif prediction== "entertainment" %}
+				<h1>Prediction: <span class='entertainment'>The news is about entertainment.</span></h1>	
+				<img class="gif1" src="{{ url_for('static', filename='entertainment.jfif') }}" alt="Entertainment Image">	
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/Balajichandra/News-Classifier"><i class="fab fa-github fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Balaji C.</p>
+       </div>
+
+	</body>
+</html>
